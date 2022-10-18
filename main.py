@@ -2,6 +2,8 @@ student_dict = {
     "student": ["Angela", "James", "Lily"],
     "score": [55, 76, 98]
 }
+
+#ITERATE OVER DICTIONARIES:
 for (key, value) in student_dict.items():
     print(key)
     #prints:
@@ -12,6 +14,7 @@ for (key, value) in student_dict.items():
     # ['Angela', 'James', 'Lily']
     # [55, 76, 98]
 
+#ITERATE OVER DATAFRAME:
 import pandas
 student_data_frame = pandas.DataFrame(student_dict)
 print(student_data_frame)
@@ -21,13 +24,12 @@ print(student_data_frame)
 # 1   James     76
 # 2    Lily     98
 
+#Loop through DATAFRAME: (loops through columns) **
+for (key, value) in student_data_frame.items():
+    print(key) #prints only keys
+    print(value) #prints only values
 
-#Loop through DATAFRAME:
-# for (key, value) in student_data_frame.items():
-#     print(key) #prints only keys
-#     print(value) #prints only values
-
-#LOOP THROUGH ROWS OF A DATA FRAME:
+#LOOP THROUGH EACH ROW OF A DATA FRAME:(loops through each row)
 for (index, row) in student_data_frame.iterrows():
     # print(index) #prints
     # 0
@@ -57,5 +59,5 @@ for (index, row) in student_data_frame.iterrows():
     # 55
     # 76
     # 98
-    if row.student == "Kotha":
-        print(row.score)
+    if row.student == "Angela":
+        print(row.score) #prints: 56 ** which is the score for Angela
